@@ -1,9 +1,13 @@
-import React from 'react'
+import '../App.css';
+import React from 'react';
+import { Link } from "react-router-dom";
 
 function Header() {
   return (
     <div>
-        <h3>Header</h3>
+        <nav className="NavBar">
+          <Link className="HomeLink" to="/marvel">MARVEL</Link>
+        </nav>
     </div>
   )
 }

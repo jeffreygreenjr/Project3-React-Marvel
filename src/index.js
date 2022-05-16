@@ -6,6 +6,8 @@ import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
+import CharactersList from "./pages/CharactersList";
+import CharacterShow from "./pages/CharacterShow";
 import ComicsList from "./pages/ComicsList";
 import ComicShow from "./pages/ComicShow";
 
@@ -17,6 +19,9 @@ ReactDOM.render(
         <Routes>
           <Route path="/" element={<App />} />
           <Route path="/marvel" element={<HomePage/>} />
+          <Route path="/marvel/characters" element={<CharactersList/>}>
+            <Route path="/marvel/characters/:id" element={<CharacterShow/>} />
+          </Route>
           <Route path="/marvel/comics" element={<ComicsList/>} >
             <Route path="/marvel/comics/:id" element={<ComicShow/>} />
           </Route>

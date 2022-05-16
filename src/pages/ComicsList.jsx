@@ -1,5 +1,6 @@
 import React from 'react'
 import ComicShow from './ComicShow'
+import Header from '../components/Header'
 
 function ComicsList(props) {
 
@@ -181,6 +182,7 @@ const ComicData = Comics.data.results[0]
 
   return (
     <div>
+        <Header />
         <h1>Comics</h1>
         <ComicShow Comics={Comics}/>
     </div>  

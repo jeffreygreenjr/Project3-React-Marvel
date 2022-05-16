@@ -1,4 +1,5 @@
 import React from 'react'
+import Header from "../components/Header";
 
 function ComicShow(props) {
 
@@ -9,6 +10,7 @@ function ComicShow(props) {
 
   return (
     <div>
+        <Header />
         <h1>Comic Show Page</h1>
         <h2>Title: {ComicItemData.title}</h2>
         <img src={`${ComicItemData.thumbnail.path}.${ComicItemData.thumbnail.extension}`} alt={ComicItemData.title} />
