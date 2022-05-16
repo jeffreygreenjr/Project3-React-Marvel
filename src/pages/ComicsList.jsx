@@ -181,10 +181,13 @@ function ComicsList(props) {
 const ComicData = Comics.data.results[0] 
 
   return (
-    <div>
+    <div className="ComicsListPage">
         <Header />
         <h1>Comics</h1>
-        <ComicShow Comics={Comics}/>
+        <div className="ComicShowContainer">
+          <ComicShow Comics={Comics}/>
+        </div>
+        
     </div>  
   )
 }

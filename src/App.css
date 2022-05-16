@@ -46,28 +46,18 @@ table {
   	text-align: center;
 }
 
-.NavBar {
-	display: flex;
-	justify-content: center;
-	margin: 2% auto;
-}
-
-.HomeLink {
-	color: black;
-	font-size: 4vh;
-	text-decoration: black;
-}
-
 .AppBody {
+	background-color: black;
 	display: flex;
+	height: 100vh;
 	justify-content: center;
-	align-content: center;
 	align-items: center;
 	text-align: center;
+
 }
 
 .HomePageButton {
-	margin: 15%;
+	align-items: center;
 	text-decoration: none;
 	color: red;
 }
@@ -77,7 +67,8 @@ table {
 }
 
 .Marvel {
-	font-size: 25vh;
+	font-size: 20vh;
+	
 }
 
 .Footer {
@@ -94,5 +85,87 @@ table {
 
 /* ----HOME PAGE STYLING---- */
 .HomePage {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
 	text-align: center;
+	height: 100vh;
+	background-color: black;
+	color: white;
+}
+
+.Header {
+	display: flex;
+	justify-content: center;
+	background-color: white;
+}
+
+.NavBar {
+	background-color: white;
+	width: 100vw;
+	text-align: center;
+	padding: 1%;
+	position: absolute;
+	top: 0;
+}
+
+.NavLink {
+	color: red;
+	font-size: 10vh;
+	text-decoration: black;
+}
+
+.HomePageTitle {
+	text-align: center;
+}
+
+.HomePageLinkContainer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+span {
+	padding: 2%;
+	font-size: 7vh;
+}
+
+.HomePageLinks {
+	font-size: 5vh;
+	color: white;
+	text-decoration: none;
+}
+
+/* ----CharacterShowPage Styling---- */
+.CharactersListPage {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	text-align: center;
+	height: 100vh;
+	background-color: black;
+	color: white;
+}
+
+.Header {
+	display: flex;
+	justify-content: center;
+	background-color: white;
+}
+
+/* ----COMICSLISTPAGE STYLING---- */
+.ComicsListPage {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	text-align: center;
+	height: 100vh;
+	background-color: black;
+	color: white;
+}
+
+.Header {
+	display: flex;
+	justify-content: center;
+	background-color: white;
 }

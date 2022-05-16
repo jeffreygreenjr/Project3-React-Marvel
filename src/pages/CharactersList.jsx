@@ -417,10 +417,12 @@ function CharactersList() {
     const CharacterData = Characters.data.results[0] 
     
   return (
-    <div>
+    <div className="CharactersListPage">
         <Header />
         <h1>CharactersList</h1>
-        <CharacterShow Characters={Characters}/>
+        <div class="CharacterShowContainer">
+            <CharacterShow Characters={Characters}/>
+        </div>
     </div>
   )
 }

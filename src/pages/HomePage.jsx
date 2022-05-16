@@ -9,13 +9,15 @@ function HomePage() {
   return (
     <div className="HomePage">
         <Header />
-        <h1>HomePage</h1>
-        <Link to="/marvel/characters">
+        <div className="HomePageLinkContainer">
+        <Link className="HomePageLinks" to="/marvel/characters">
             <h4>CHARACTERS</h4>
         </Link>
-        <Link to="/marvel/comics">
+        <span> | </span>
+        <Link className="HomePageLinks" to="/marvel/comics">
             <h4>COMICS</h4>
         </Link>
+        </div>
         <Footer />  
     </div>
   )

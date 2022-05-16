@@ -9,7 +9,6 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
       <div className="AppBody">
         <Link className="HomePageButton" to="/marvel">
           <h3 className="TitleText">EXPLORE</h3> 
@@ -17,8 +16,6 @@ function App() {
           <h3 className="TitleText">UNIVERSE</h3>
         </Link>
       </div>
-      
-      <Footer />
     </div>
   );
 }

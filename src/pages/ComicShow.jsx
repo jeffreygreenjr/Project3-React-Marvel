@@ -13,7 +13,7 @@ function ComicShow(props) {
         <Header />
         <h1>Comic Show Page</h1>
         <h2>Title: {ComicItemData.title}</h2>
-        <img src={`${ComicItemData.thumbnail.path}.${ComicItemData.thumbnail.extension}`} alt={ComicItemData.title} />
+        <img src={`${ComicItemData.thumbnail.path}/portrait_xlarge.${ComicItemData.thumbnail.extension}`} alt={ComicItemData.title} />
         <p>{`Price: $  ${ComicItemData.prices[0].price}`}</p>
         <h6>Writers:</h6>
         <p>{`${ComicItemData.creators.items[0].name}, ${ComicItemData.creators.items[1].name}`}</p>
