@@ -3,16 +3,26 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-// import router
 import { BrowserRouter as Router } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import ComicsList from "./pages/ComicsList";
+import ComicShow from "./pages/ComicShow";
 
 // wrap our application inside of router to enable using router
 ReactDOM.render(
-  <Router>
+  
     <React.StrictMode>
-      <App />
-    </React.StrictMode>
-  </Router>,
+      <Router>
+        <Routes>
+          <Route path="/" element={<App />} />
+          <Route path="/marvel" element={<HomePage/>} />
+          <Route path="/marvel/comics" element={<ComicsList/>} >
+            <Route path="/marvel/comics/:id" element={<ComicShow/>} />
+          </Route>
+        </Routes>
+      </Router>
+    </React.StrictMode>,
   document.getElementById("root")
 );
 
