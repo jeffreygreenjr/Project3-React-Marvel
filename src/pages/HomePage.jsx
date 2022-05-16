@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 function HomePage() {
   return (
-    <div>
+    <div className="HomePage">
         <Header />
         <h1>HomePage</h1>
         <Link to="/marvel/characters">

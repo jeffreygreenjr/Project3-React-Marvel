@@ -43,11 +43,56 @@ table {
 }
 
 .App {
-  text-align: center;
+  	text-align: center;
 }
 
 .NavBar {
 	display: flex;
 	justify-content: center;
 	margin: 2% auto;
+}
+
+.HomeLink {
+	color: black;
+	font-size: 4vh;
+	text-decoration: black;
+}
+
+.AppBody {
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.HomePageButton {
+	margin: 15%;
+	text-decoration: none;
+	color: red;
+}
+
+.TitleText {
+	font-size: 5vh;
+}
+
+.Marvel {
+	font-size: 25vh;
+}
+
+.Footer {
+	display: flex;
+	justify-content: center;
+}
+
+.FooterText {
+	margin: 2% auto;
+	text-align: center;
+	position: absolute;
+	bottom: 0;
+}
+
+/* ----HOME PAGE STYLING---- */
+.HomePage {
+	text-align: center;
 }
