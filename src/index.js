@@ -19,9 +19,8 @@ ReactDOM.render(
         <Routes>
           <Route path="/" element={<App />} />
           <Route path="/marvel" element={<HomePage/>} />
-          <Route path="/marvel/characters" element={<CharactersList/>}>
-            <Route path="/marvel/characters/:id" element={<CharacterShow/>} />
-          </Route>
+          <Route path="/marvel/characters/" element={<CharactersList/>} />
+          <Route path="/marvel/characters/:id" element={<CharacterShow/>} />
           <Route path="/marvel/comics" element={<ComicsList/>} >
             <Route path="/marvel/comics/:id" element={<ComicShow/>} />
           </Route>
