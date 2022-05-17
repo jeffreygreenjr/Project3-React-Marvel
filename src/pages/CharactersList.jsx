@@ -1,6 +1,9 @@
 import React from 'react';
 import Header from "../components/Header";
 import CharacterShow from "./CharacterShow";
+import { useState, useEffect } from 'react';
+import { useParams } from 'react-router';
+const hash = require('object-hash')
 
 function CharactersList() {
 
@@ -414,6 +417,18 @@ function CharactersList() {
         }
       }
 
+    const ts = Date.now();
+
+    const publicKey = "bae264a78d7aecbdf0c29743a7238fcf"
+    const privateKey = "d7947ba99955b0776f74ec69494c5aa2c8517542"
+
+    const hashKey = hash.MD5(ts + publicKey + privateKey)
+    console.log(hashKey)
+    
+    const URL = `https://gateway.marvel.com:443/v1/public/characters?ts=${ts}&apikey=${publicKey}&hash=${hashKey}`
+
+
+    
     const CharacterData = Characters.data.results[0] 
     
   return (

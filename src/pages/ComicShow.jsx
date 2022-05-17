@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import Header from "../components/Header";
 
 function ComicShow(props) {
@@ -9,7 +9,7 @@ function ComicShow(props) {
     console.log(ComicItemData)
 
   return (
-    <div>
+    <div className="ComicShowPage">
         <Header />
         <h1>Comic Show Page</h1>
         <h2>Title: {ComicItemData.title}</h2>
