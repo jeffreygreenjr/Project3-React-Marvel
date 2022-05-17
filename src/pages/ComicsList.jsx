@@ -192,7 +192,7 @@ function ComicsList(props) {
     
     const URL = `https://gateway.marvel.com:443/v1/public/comics?ts=${ts}&apikey=${publicKey}&hash=${hashKey}`
 
-    const [comics, setComics] = useState([]);
+    const [comics, setComics] = useState(null);
 
     const getComics = async () => {
       const res = await fetch(URL);

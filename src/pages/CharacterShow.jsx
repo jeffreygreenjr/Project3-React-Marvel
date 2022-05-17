@@ -22,7 +22,7 @@ function CharacterShow(props) {
   const hashKey = "4c28d14aff270e81fe72ecb1a63adeee"
   console.log(hashKey)
 
-  const URL = `https://gateway.marvel.com:443/v1/public/characters/${characterId}ts=${ts}&apikey=${publicKey}&hash=${hashKey}`
+  const URL = `https://gateway.marvel.com:443/v1/public/characters/${characterId}?ts=${ts}&apikey=${publicKey}&hash=${hashKey}`
 
   async function getCharacterInfo() {
     const res = await fetch(URL);

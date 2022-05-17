@@ -208,4 +208,11 @@ span {
 .ComicShowPage {
 	font-family: 'Source Sans Pro', sans-serif;
 	font-weight: 600;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	text-align: center;
+	height: 100vh;
+	background-color: black;
+	color: white;
 }
