@@ -1,3 +1,4 @@
+import '../styles/Comic.css'
 import React from 'react'
 import Header from "../components/Header";
 import ComicShow from './ComicShow';
@@ -192,7 +193,7 @@ function ComicsList(props) {
     
     const URL = `https://gateway.marvel.com:443/v1/public/comics?ts=${ts}&apikey=${publicKey}&hash=${hashKey}`
 
-    const [comics, setComics] = useState(null);
+    const [comics, setComics] = useState([]);
 
     const getComics = async () => {
       const res = await fetch(URL);
@@ -212,7 +213,7 @@ function ComicsList(props) {
     const showComics = comics.map((comic, idx) => {
       console.log(comic)
       return (
-        <div className="ComicShowContainer" key={comic.id}>
+        <div className="ComicList" key={comic.id}>
           <Link to={`/marvel/comics/${comic.id}`} key={comic.id}>
             <img src={`${comic.thumbnail.path}/portrait_medium.${comic.thumbnail.extension}`}/>
           </Link>        
@@ -224,8 +225,12 @@ function ComicsList(props) {
     return (
       <div className="ComicsListPage">
         <Header />
-            <h1>ComicsList</h1>
-            {showComics}
+        <div className="ComicsPageTitle">
+          <h1 className="ComicsPageTitleText">Comics</h1>
+        </div>
+        <div className="ComicsListContainer">
+          {showComics}
+        </div>    
       </div>
     )
 }

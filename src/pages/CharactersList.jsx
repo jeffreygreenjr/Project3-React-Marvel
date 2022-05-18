@@ -1,4 +1,4 @@
-import '../App.css';
+import '../styles/Character.css'
 import React from 'react';
 import Header from "../components/Header";
 import CharacterShow from "./CharacterShow";
@@ -462,7 +462,7 @@ function CharactersList() {
   const showCharacters = characters.map((character, idx) => {
     console.log(character)
     return (
-      <div className="CharacterShowContainer" key={character.id}>
+      <div className="CharacterList" key={character.id}>
         <Link to={`/marvel/characters/${character.id}`} key={character.id}>
           <img src={`${character.thumbnail.path}/portrait_medium.${character.thumbnail.extension}`}/>
         </Link>        
@@ -474,8 +474,13 @@ function CharactersList() {
 return (
   <div className="CharactersListPage">
     <Header />
-        <h1>CharactersList</h1>
+      <div className="CharactersListTitle">
+        <h1 className="CharacterTitleText">Characters</h1>
+      </div>
+      <div className="CharacterListContainer">
         {showCharacters}
+      </div>
+        
   </div>
 )
 }

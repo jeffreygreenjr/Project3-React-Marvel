@@ -1,4 +1,4 @@
-import '../App.css';
+import '../styles/Character.css'
 import React, { useState, useEffect } from 'react'
 import Header from "../components/Header";
 import { useParams } from 'react-router';
