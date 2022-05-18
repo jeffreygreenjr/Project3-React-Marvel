@@ -9,11 +9,13 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
-      <Link to="/marvel">
-        <h1>Explore the Marvel Universe</h1>
-      </Link>
-      <Footer />
+      <div className="AppBody">
+        <Link className="HomePageButton" to="/marvel">
+          <h3 className="TitleText">EXPLORE</h3> 
+          <h1 className="Marvel">MARVEL</h1>
+          <h3 className="TitleText">UNIVERSE</h3>
+        </Link>
+      </div>
     </div>
   );
 }
