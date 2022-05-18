@@ -73,7 +73,7 @@ table {
 	font-family: 'Source Sans Pro', sans-serif;
 	font-weight: 600;
 	display: flex;
-	justify-content: center;
+	justify-content: flex-start;
 	flex-direction: column;
 	text-align: center;
 	height: 100vh;
@@ -82,7 +82,8 @@ table {
 }
 
 .CharactersListTitle {
-    margin: 5%;
+    margin: 2%;
+	margin-top: 12%;
 }
 
 .CharacterTitleText {
@@ -90,7 +91,24 @@ table {
     color: white;
 }
 
-.CharacterListContainer {
+.SearchButton {
+	background-color: red;
+	border: 1px solid red;
+	color: white;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 600;
+}
+
+.ResultsContainer {
+	background: black;
+	display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+	margin-top: 5%;
+}
+
+/* .CharacterListContainer {
     display: flex;
     justify-content: center;
     flex-direction: row;
@@ -101,18 +119,10 @@ table {
     display: flex;
     flex-direction: column;
     padding: 2%;
-}
+} */
 
 .CharacterName {
 	color: white;
-}
-
-.Header {
-	font-family: 'Source Sans Pro', sans-serif;
-	font-weight: 600;
-	display: flex;
-	justify-content: center;
-	background-color: white;
 }
 
 /* ----CHARACTERSHOWPAGE STYLING---- */

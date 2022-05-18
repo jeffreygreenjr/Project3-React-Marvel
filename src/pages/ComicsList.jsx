@@ -1,6 +1,7 @@
 import '../styles/Comic.css'
 import React from 'react'
 import Header from "../components/Header";
+import ComicSearchContainer from "../components/ComicSearchContainer"
 import ComicShow from './ComicShow';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
@@ -183,13 +184,11 @@ function ComicsList(props) {
   // }
 
   const ts = "1";
-    console.log(ts)
 
     const publicKey = "bae264a78d7aecbdf0c29743a7238fcf"
     const privateKey = "d7947ba99955b0776f74ec69494c5aa2c8517542"
 
     const hashKey = "4c28d14aff270e81fe72ecb1a63adeee"
-    console.log(hashKey)
     
     const URL = `https://gateway.marvel.com:443/v1/public/comics?ts=${ts}&apikey=${publicKey}&hash=${hashKey}`
 
@@ -202,9 +201,9 @@ function ComicsList(props) {
       setComics(data.data.results)
     }
 
-    useEffect(() => {
-      getComics();
-    }, []);
+    // useEffect(() => {
+    //   getComics();
+    // }, []);
 
     const loading = () => {
       return <h1>Loading the Marvel Universe...</h1>
@@ -213,8 +212,8 @@ function ComicsList(props) {
     const showComics = comics.map((comic, idx) => {
       console.log(comic)
       return (
-        <div className="ComicList" key={comic.id}>
-          <Link to={`/marvel/comics/${comic.id}`} key={comic.id}>
+        <div className="ComicList" key={idx}>
+          <Link to={`/marvel/comics/${comic.id}`} key={idx}>
             <img src={`${comic.thumbnail.path}/portrait_xlarge.${comic.thumbnail.extension}`}/>
           </Link>        
           <h3 className="ComicName">{comic.title}</h3>
@@ -228,8 +227,11 @@ function ComicsList(props) {
         <div className="ComicsPageTitle">
           <h1 className="ComicsPageTitleText">Comics</h1>
         </div>
+        <div className="SearchContainer">
+          <ComicSearchContainer />
+        </div>
         <div className="ComicsListContainer">
-          {showComics}
+          {/* {showComics} */}
         </div>    
       </div>
     )

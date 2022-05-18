@@ -15,7 +15,6 @@ function ResultsCharacter(props) {
 
   return (
     <div>
-        <h1>Results</h1>
         <div className="ResultsContainer">
             {showResults}
         </div>

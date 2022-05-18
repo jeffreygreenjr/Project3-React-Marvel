@@ -95,6 +95,7 @@ table {
 .HomePage {
 	display: flex;
 	justify-content: center;
+	align-items: center;
 	flex-direction: column;
 	text-align: center;
 	height: 100vh;
@@ -107,6 +108,8 @@ table {
 	display: flex;
 	justify-content: center;
 	background-color: white;
+	position: fixed;
+	top: 0;
 }
 
 .NavBar {
@@ -114,8 +117,6 @@ table {
 	width: 100vw;
 	text-align: center;
 	padding: 1%;
-	position: absolute;
-	top: 0;
 }
 
 .NavLink {
@@ -132,8 +133,8 @@ table {
 
 .HomePageLinkContainer {
 	display: flex;
-	justify-content: center;
 	align-items: center;
+	justify-content: center;
 }
 
 .span {
