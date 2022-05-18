@@ -1,7 +1,7 @@
 import '../styles/Character.css'
 import React from 'react';
 import Header from "../components/Header";
-import CharacterSearch from "../components/CharacterSearch"
+import CharacterSearchContainer from "../components/CharacterSearchContainer"
 import CharacterShow from "./CharacterShow";
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'
@@ -421,13 +421,13 @@ function CharactersList() {
     //   }
 
     const ts = "1";
-    console.log(ts)
+    // console.log(ts)
 
     const publicKey = "bae264a78d7aecbdf0c29743a7238fcf"
     const privateKey = "d7947ba99955b0776f74ec69494c5aa2c8517542"
 
     const hashKey = "4c28d14aff270e81fe72ecb1a63adeee"
-    console.log(hashKey)
+    // console.log(hashKey)
     
     const URL = `https://gateway.marvel.com:443/v1/public/characters?ts=${ts}&apikey=${publicKey}&hash=${hashKey}`
 
@@ -436,13 +436,13 @@ function CharactersList() {
     const getCharacters = async () => {
       const res = await fetch(URL);
       const data = await res.json();
-      console.log(`Look ${JSON.stringify(data.data.results[0])}`)
+      // console.log(`Look ${JSON.stringify(data.data.results[0])}`)
       setCharacters(data.data.results)
     }
 
-    useEffect(() => {
-      getCharacters();
-    }, []);
+    // useEffect(() => {
+    //   getCharacters();
+    // }, []);
 
     const loading = () => {
       return <h1>Loading the Marvel Universe...</h1>
@@ -461,7 +461,7 @@ function CharactersList() {
   // )
 
   const showCharacters = characters.map((character, idx) => {
-    console.log(character)
+    // console.log(character)
     return (
       <div className="CharacterList" key={character.id}>
         <Link to={`/marvel/characters/${character.id}`} key={character.id}>
@@ -479,10 +479,10 @@ return (
         <h1 className="CharacterTitleText">Characters</h1>
       </div>
       <div className="SearchContainer">
-        <CharacterSearch />
+        <CharacterSearchContainer />
       </div>
       <div className="CharacterListContainer">
-        {showCharacters}
+        {/* {showCharacters} */}
       </div>
         
   </div>
