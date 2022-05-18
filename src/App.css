@@ -52,6 +52,7 @@ table {
 	background-color: black;
 	display: flex;
 	height: 100vh;
+	width: 100vw;
 	justify-content: center;
 	align-items: center;
 	text-align: center;
@@ -67,13 +68,13 @@ table {
 .TitleText {
 	font-family: 'Source Sans Pro', sans-serif;
 	font-weight: 600;
-	font-size: 5vh;
+	font-size: 2em;
 }
 
 .Marvel {
 	font-family: 'Source Sans Pro', sans-serif;
 	font-weight: 900;
-	font-size: 20vh;
+	font-size: 6em;
 }
 
 .Footer {
