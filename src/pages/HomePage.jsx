@@ -13,7 +13,7 @@ function HomePage() {
         <Link className="HomePageLinks" to="/marvel/characters">
             <h4>CHARACTERS</h4>
         </Link>
-        <span> | </span>
+        <span className="span"> | </span>
         <Link className="HomePageLinks" to="/marvel/comics">
             <h4>COMICS</h4>
         </Link>

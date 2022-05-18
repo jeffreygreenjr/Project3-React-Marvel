@@ -215,7 +215,7 @@ function ComicsList(props) {
       return (
         <div className="ComicList" key={comic.id}>
           <Link to={`/marvel/comics/${comic.id}`} key={comic.id}>
-            <img src={`${comic.thumbnail.path}/portrait_medium.${comic.thumbnail.extension}`}/>
+            <img src={`${comic.thumbnail.path}/portrait_xlarge.${comic.thumbnail.extension}`}/>
           </Link>        
           <h3 className="ComicName">{comic.title}</h3>
         </div>

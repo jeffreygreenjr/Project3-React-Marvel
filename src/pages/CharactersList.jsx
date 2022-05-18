@@ -464,7 +464,7 @@ function CharactersList() {
     return (
       <div className="CharacterList" key={character.id}>
         <Link to={`/marvel/characters/${character.id}`} key={character.id}>
-          <img src={`${character.thumbnail.path}/portrait_medium.${character.thumbnail.extension}`}/>
+          <img src={`${character.thumbnail.path}/portrait_xlarge.${character.thumbnail.extension}`}/>
         </Link>        
         <h3 className="CharacterName">{character.name}</h3>
       </div>
