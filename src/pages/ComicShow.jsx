@@ -24,19 +24,40 @@ function ComicShow(props) {
       const res = await fetch(URL);
       const data = await res.json();
       console.log(`Look ${JSON.stringify(data.data.results[0])}`)
-      setComic(data.data)
+      setComic(data.data.results[0])
     }
   
     useEffect(() => {
       getComicInfo();
     }, [])
 
+  const showCreators = comic ? comic.creators.items.map((creator, idx) => {
+    console.log(creator)
+    return (
+      <div className="CreatorList" key={idx}>       
+        <h3 className="CreatorName">{creator.name}</h3>
+      </div>
+    )
+  })
+: <h2>Loading Creators...</h2>
+
   return (
     <div className="ComicShowPage">
         <Header />
-        <h2>Comic Show Page</h2>
-        <h2></h2>
-      
+        { comic ?
+        <div className="ComicShowContainer">
+          <div className="ComicShowTItle">
+            <h2 className="ComicShowTitleText">Comic Show Page</h2>
+          </div>
+          <div className="ComicShowData">
+            <h2>{comic.title}</h2>
+            <img src={`${comic.thumbnail.path}/portrait_xlarge.${comic.thumbnail.extension}`}/>
+            <h2>Creators:</h2>
+            {showCreators}
+            <h3>{comic.description}</h3>
+          </div>
+        </div>
+        : null }
     </div>
   )
 }
