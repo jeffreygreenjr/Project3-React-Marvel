@@ -1,6 +1,7 @@
 import '../styles/Character.css'
 import React from 'react';
 import Header from "../components/Header";
+import CharacterSearch from "../components/CharacterSearch"
 import CharacterShow from "./CharacterShow";
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'
@@ -476,6 +477,9 @@ return (
     <Header />
       <div className="CharactersListTitle">
         <h1 className="CharacterTitleText">Characters</h1>
+      </div>
+      <div className="SearchContainer">
+        <CharacterSearch />
       </div>
       <div className="CharacterListContainer">
         {showCharacters}
