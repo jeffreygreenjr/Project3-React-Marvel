@@ -54,26 +54,12 @@ table {
   	text-align: center;
 }
 
-.Footer {
-	display: flex;
-	justify-content: center;
-}
-
-.FooterText {
-	font-family: 'Source Sans Pro', sans-serif;
-	font-weight: 600;
-	margin: 2% auto;
-	text-align: center;
-	position: absolute;
-	bottom: 0;
-}
-
 /* ----CharacterListPage Styling---- */
 .CharactersListPage {
 	font-family: 'Source Sans Pro', sans-serif;
 	font-weight: 600;
 	display: flex;
-	justify-content: center;
+	justify-content: flex-start;
 	flex-direction: column;
 	text-align: center;
 	height: 100%;
@@ -82,8 +68,8 @@ table {
 }
 
 .CharactersListTitle {
-    margin: 10% auto;
-    margin-bottom: 5%;
+    margin: 2%;
+	margin-top: 12%;
 }
 
 .CharacterTitleText {
@@ -91,29 +77,58 @@ table {
     color: white;
 }
 
+.SearchButton {
+	background-color: red;
+	border: 1px solid red;
+	color: white;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 600;
+}
+
+.ResultsContainer {
+	background: black;
+	display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+	margin-top: 3%;
+}
+
 .CharacterListContainer {
+	background: black;
     display: flex;
     justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
+	padding-bottom: 2%;
 }
 
 .CharacterList {
     display: flex;
     flex-direction: column;
     padding: 2%;
+	max-width: 20%;
 }
 
 .CharacterName {
 	color: white;
 }
 
-.Header {
+.NextButtonContainer {
+	background-color: black;
+	padding-bottom: 5%;
+}
+
+.NextButton {
+	background-color: red;
+	border: 1px solid red;
+	color: white;
 	font-family: 'Source Sans Pro', sans-serif;
 	font-weight: 600;
-	display: flex;
-	justify-content: center;
-	background-color: white;
+}
+
+.CharacterListAttributionContainer {
+	margin-bottom: 5%;
 }
 
 /* ----CHARACTERSHOWPAGE STYLING---- */
@@ -127,4 +142,99 @@ table {
 	height: 100vh;
 	background-color: black;
 	color: white;
+}
+
+.CharacterShowBody {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.CharacterShowContainer {
+	background-color: red;
+	border-radius: 5%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	height: 40vh;
+	width: 70vw;
+	padding: 5%;
+}
+
+.CharacterShowData {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+}
+
+.CharacterShowImage {
+	justify-content: flex-start;
+	padding-right: 10%;
+}
+
+.CharacterShowInfoText {
+	border-left: 5px solid white;
+	height: 40vh;
+	width: 50vw;
+	overflow: hidden;
+    overflow-y: scroll;
+	padding-left: 5%;
+}
+
+.CharacterShowNameText {
+	font-size: 2em;
+	padding-bottom: 5%;
+}
+
+.AttributionContainer {
+	margin-top: 5%;
+}
+
+.BackButton {
+	background-color: red;
+	border: 1px solid red;
+	color: white;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 600;
+	margin-top: 5%;
+}
+
+/* ----------MEDIA QUERY (PHONE)----------- */
+@media screen and (max-width: 600px) {
+
+	/* CHARACTER LIST */
+	.CharacterTitleText {
+		margin-top: 20%;
+	}
+
+	.CharacterList {
+		min-width: 100%;
+	}
+
+	/* CHARACTER SHOW */
+	.CharacterShowContainer {
+		height: 65vh;
+		width: 70vw;
+		margin-top: 10%;
+	}
+
+	.CharacterShowData {
+		flex-direction: column;
+		margin-top: 125%;
+	}
+
+	.CharacterShowImage {
+		padding-right: 0;
+	}
+
+	.CharacterShowInfoText {
+		border-left: none;
+		height: 70vh;
+		width: 60vw;
+		overflow: hidden;
+    	overflow-y: scroll;
+		padding-left: 0;
+	}
 }
