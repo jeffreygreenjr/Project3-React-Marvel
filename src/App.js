@@ -16,6 +16,7 @@ function App() {
           <h3 className="TitleText">UNIVERSE</h3>
         </Link>
       </div>
+      <Footer />
     </div>
   );
 }

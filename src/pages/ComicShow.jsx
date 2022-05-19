@@ -1,8 +1,9 @@
 import '../App.css';
 import React, { useState, useEffect } from 'react'
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 import { useParams } from 'react-router';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 function ComicShow(props) {
 
@@ -13,12 +14,9 @@ function ComicShow(props) {
     console.log(comicId)
 
     const ts = "1";
-
-    const publicKey = "bae264a78d7aecbdf0c29743a7238fcf"
-    const privateKey = "d7947ba99955b0776f74ec69494c5aa2c8517542"
-
-    const hashKey = "4c28d14aff270e81fe72ecb1a63adeee"
-
+    const publicKey = process.env.REACT_APP_PUBLIC_KEY
+    const privateKey = process.env.REACT_APP_PRIVATE_KEY
+    const hashKey = process.env.REACT_APP_HASH_KEY
     const URL = `https://gateway.marvel.com:443/v1/public/comics/${comicId}?ts=${ts}&apikey=${publicKey}&hash=${hashKey}`
 
     async function getComicInfo() {
@@ -46,27 +44,31 @@ function ComicShow(props) {
     <div className="ComicShowPage">
         <Header />
         { comic ?
-        <div className="ComicShowContainer">
-          <div className="ComicShowPageHeader">
-          </div>
-          <div className="ComicShowData">
-            <div className="ComicShowImage">
-            <img src={`${comic.thumbnail.path}/portrait_xlarge.${comic.thumbnail.extension}`}/>
+        <div className="ComicShowBody">
+          <div className="ComicShowContainer">
+            <div className="ComicShowData">
+              <div className="ComicShowImage">
+                <img src={`${comic.thumbnail.path}/portrait_xlarge.${comic.thumbnail.extension}`}/>
+              </div>
+              <div className="ComicShowInfoText">
+                <h2 className="ComicShowTitleText">{comic.title}</h2>
+                <h2>Creators:</h2>
+                {showCreators}
+                <h3>{comic.description}</h3>
+              </div>
             </div>
-            <div className="ComicShowInfoText">
-              <h2 className="ComicShowTitleText">{comic.title}</h2>
-              <h2>Creators:</h2>
-              {showCreators}
-              <h3>{comic.description}</h3>
+            <div className="AttributionContainer">
+              <p>Data provided by Marvel. © 2014 Marvel</p>
             </div>
           </div>
         </div>
         : null }
         <div className="BackButtonContainer">
-        <Link className="HomePageLinks" to="/marvel/comics">
-          <button className="BackButton">Back to Comics</button>
-        </Link>
+          <Link className="HomePageLinks" to="/marvel/comics">
+            <button className="BackButton">Back to Comics</button>
+          </Link>
         </div>
+        <Footer />
     </div>
   )
 }

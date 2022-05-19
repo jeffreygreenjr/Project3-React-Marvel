@@ -54,20 +54,6 @@ table {
   	text-align: center;
 }
 
-.Footer {
-	display: flex;
-	justify-content: center;
-}
-
-.FooterText {
-	font-family: 'Source Sans Pro', sans-serif;
-	font-weight: 600;
-	margin: 2% auto;
-	text-align: center;
-	position: absolute;
-	bottom: 0;
-}
-
 /* ----CharacterListPage Styling---- */
 .CharactersListPage {
 	font-family: 'Source Sans Pro', sans-serif;
@@ -76,7 +62,7 @@ table {
 	justify-content: flex-start;
 	flex-direction: column;
 	text-align: center;
-	height: 100vh;
+	height: 100%;
 	background-color: black;
 	color: white;
 }
@@ -121,6 +107,7 @@ table {
     display: flex;
     flex-direction: column;
     padding: 2%;
+	max-width: 20%;
 }
 
 .CharacterName {
@@ -140,6 +127,10 @@ table {
 	font-weight: 600;
 }
 
+.CharacterListAttributionContainer {
+	margin-bottom: 5%;
+}
+
 /* ----CHARACTERSHOWPAGE STYLING---- */
 .CharacterShowPage {
 	font-family: 'Source Sans Pro', sans-serif;
@@ -153,15 +144,29 @@ table {
 	color: white;
 }
 
-.CharacterShowData {
+.CharacterShowBody {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.CharacterShowContainer {
 	background-color: red;
 	border-radius: 5%;
-	margin: auto 15%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	height: 40vh;
+	width: 70vw;
+	padding: 5%;
+}
+
+.CharacterShowData {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: row;
-	padding: 5%;
 }
 
 .CharacterShowImage {
@@ -171,15 +176,20 @@ table {
 
 .CharacterShowInfoText {
 	border-left: 5px solid white;
-	height: 75%;
-	width: 50%;
+	height: 40vh;
+	width: 50vw;
+	overflow: hidden;
+    overflow-y: scroll;
 	padding-left: 5%;
-	
 }
 
 .CharacterShowNameText {
 	font-size: 2em;
 	padding-bottom: 5%;
+}
+
+.AttributionContainer {
+	margin-top: 5%;
 }
 
 .BackButton {
@@ -189,4 +199,42 @@ table {
 	font-family: 'Source Sans Pro', sans-serif;
 	font-weight: 600;
 	margin-top: 5%;
+}
+
+/* ----------MEDIA QUERY (PHONE)----------- */
+@media screen and (max-width: 600px) {
+
+	/* CHARACTER LIST */
+	.CharacterTitleText {
+		margin-top: 20%;
+	}
+
+	.CharacterList {
+		min-width: 100%;
+	}
+
+	/* CHARACTER SHOW */
+	.CharacterShowContainer {
+		height: 65vh;
+		width: 70vw;
+		margin-top: 10%;
+	}
+
+	.CharacterShowData {
+		flex-direction: column;
+		margin-top: 125%;
+	}
+
+	.CharacterShowImage {
+		padding-right: 0;
+	}
+
+	.CharacterShowInfoText {
+		border-left: none;
+		height: 70vh;
+		width: 60vw;
+		overflow: hidden;
+    	overflow-y: scroll;
+		padding-left: 0;
+	}
 }

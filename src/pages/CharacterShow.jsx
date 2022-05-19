@@ -1,6 +1,7 @@
 import '../styles/Character.css'
 import React, { useState, useEffect } from 'react'
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
 
@@ -15,14 +16,9 @@ function CharacterShow(props) {
   console.log(characterId)
 
   const ts = "1";
-      console.log(ts)
-
-  const publicKey = "bae264a78d7aecbdf0c29743a7238fcf"
-  const privateKey = "d7947ba99955b0776f74ec69494c5aa2c8517542"
-
-  const hashKey = "4c28d14aff270e81fe72ecb1a63adeee"
-  console.log(hashKey)
-
+  const publicKey = process.env.REACT_APP_PUBLIC_KEY
+  const privateKey = process.env.REACT_APP_PRIVATE_KEY
+  const hashKey = process.env.REACT_APP_HASH_KEY
   const URL = `https://gateway.marvel.com:443/v1/public/characters/${characterId}?ts=${ts}&apikey=${publicKey}&hash=${hashKey}`
 
   async function getCharacterInfo() {
@@ -50,19 +46,21 @@ function CharacterShow(props) {
     <div className="CharacterShowPage">  
         <Header />
         { character ?
-        <div className="CharacterShowContainer">
-          <div className="CharacterShowPageHeader">
-            <h2 className="CharacterShowPageText"></h2>
-          </div>
-          <div className="CharacterShowData">
-            <div className="CharacterShowImage">
-            <img src={`${character.thumbnail.path}/portrait_xlarge.${character.thumbnail.extension}`}/>
+        <div className="CharacterShowBody">
+          <div className="CharacterShowContainer">
+            <div className="CharacterShowData">
+              <div className="CharacterShowImage">
+                <img src={`${character.thumbnail.path}/portrait_xlarge.${character.thumbnail.extension}`}/>
+              </div>
+              <div className="CharacterShowInfoText">
+                <h2 className="CharacterShowNameText">{character.name}</h2>
+                <h3>{character.description}</h3>
+                <h2>Appearances:</h2>
+                {showStories}
+              </div>
             </div>
-            <div className="CharacterShowInfoText">
-            <h2 className="CharacterShowNameText">{character.name}</h2>
-            <h3>{character.description}</h3>
-            <h2>Appearances:</h2>
-            {showStories}
+            <div className="AttributionContainer">
+              <p>Data provided by Marvel. © 2014 Marvel</p>
             </div>
           </div>
         </div>
@@ -72,6 +70,7 @@ function CharacterShow(props) {
           <button className="BackButton">Back to Characters</button>
         </Link>
         </div>
+        <Footer />
         </div>
   )
 }

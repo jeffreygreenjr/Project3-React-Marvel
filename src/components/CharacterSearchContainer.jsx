@@ -11,9 +11,9 @@ function CharacterSearchContainer() {
       e.preventDefault()
       try {
         const ts = "1";
-        const publicKey = "bae264a78d7aecbdf0c29743a7238fcf"
-        const privateKey = "d7947ba99955b0776f74ec69494c5aa2c8517542"
-        const hashKey = "4c28d14aff270e81fe72ecb1a63adeee"
+        const publicKey = process.env.REACT_APP_PUBLIC_KEY
+        const privateKey = process.env.REACT_APP_PRIVATE_KEY
+        const hashKey = process.env.REACT_APP_HASH_KEY
         const URL = `https://gateway.marvel.com:443/v1/public/characters?name=${query}&ts=${ts}&apikey=${publicKey}&hash=${hashKey}`
 
         const response = await fetch(URL)
