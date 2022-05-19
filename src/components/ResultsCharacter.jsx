@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom'
 
 function ResultsCharacter(props) {
 
-    console.log(props)
-
     const showResults = props.results.map((result, idx) => {
         return(
             <div className="ResultsList">

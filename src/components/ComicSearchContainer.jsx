@@ -18,7 +18,6 @@ function ComicSearchContainer() {
 
         const response = await fetch(URL)
         const data = await response.json()
-        // console.log(data.data.results)
         setResults(data.data.results)
 
       } catch (err) {
