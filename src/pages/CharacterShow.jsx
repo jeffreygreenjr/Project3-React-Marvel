@@ -2,6 +2,7 @@ import '../styles/Character.css'
 import React, { useState, useEffect } from 'react'
 import Header from "../components/Header";
 import { useParams } from 'react-router';
+import { Link } from 'react-router-dom';
 
 function CharacterShow(props) {
 
@@ -50,18 +51,27 @@ function CharacterShow(props) {
         <Header />
         { character ?
         <div className="CharacterShowContainer">
-          <div className="CharacterShowTItle">
-            <h2 className="CharacterShowTitleText">Character Show Page</h2>
+          <div className="CharacterShowPageHeader">
+            <h2 className="CharacterShowPageText"></h2>
           </div>
           <div className="CharacterShowData">
-            <h2>{character.name}</h2>
+            <div className="CharacterShowImage">
             <img src={`${character.thumbnail.path}/portrait_xlarge.${character.thumbnail.extension}`}/>
+            </div>
+            <div className="CharacterShowInfoText">
+            <h2 className="CharacterShowNameText">{character.name}</h2>
             <h3>{character.description}</h3>
             <h2>Appearances:</h2>
             {showStories}
+            </div>
           </div>
         </div>
         : null }
+         <div className="BackButtonContainer">
+        <Link className="HomePageLinks" to="/marvel/characters">
+          <button className="BackButton">Back to Characters</button>
+        </Link>
+        </div>
         </div>
   )
 }

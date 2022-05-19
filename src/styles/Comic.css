@@ -68,7 +68,7 @@ table {
 	bottom: 0;
 }
 
-/* ----CharacterListPage Styling---- */
+/* ----ComicsListPage Styling---- */
 .ComicsListPage {
 	font-family: 'Source Sans Pro', sans-serif;
 	font-weight: 600;
@@ -99,37 +99,74 @@ table {
     color: white;
 }
 
-
 .ResultsContainer {
 	background: black;
 	display: flex;
     justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
-	margin-top: 5%;
+	margin-top: 3%;
+	padding-bottom: 5%;
 }
 
 .ResultsList {
+	border-radius: 15%;
 	display: flex;
     flex-direction: column;
-    padding: 2%;
+    padding: 3%;
+	opacity: .9;
 }
 
-/* .ComicsListContainer {
+.ResultsList:hover {
+	/* background-color: red;
+	box-shadow: 0 2px 20px red; */
+	opacity: 1;
+	transform:scale(110%);
+}
+
+.ResultsList:active {
+	transform: translateY(4px);
+}
+
+img {
+	border-radius: 2%;
+}
+
+.ComicsListContainer {
+	background-color: black;
     display: flex;
     justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
+	padding-bottom: 2%;
 }
 
 .ComicList {
     display: flex;
     flex-direction: column;
+	opacity: .9;
     padding: 2%;
-} */
+}
+
+.ComicList:hover {
+	opacity: 1;
+	transform: scale(110%);
+}
+
+.ComicList:active {
+	transform: translateY(4px);
+}
 
 .ComicName {
 	color: white;
+}
+
+.NextButton {
+	background-color: red;
+	border: 1px solid red;
+	color: white;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 600;
 }
 
 /* ----CHARACTERSHOWPAGE STYLING---- */
@@ -143,4 +180,41 @@ table {
 	height: 100vh;
 	background-color: black;
 	color: white;
+}
+
+.ComicShowData {
+	background-color: red;
+	border-radius: 5%;
+	margin: auto 15%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+	padding: 5%;
+}
+
+.ComicShowImage {
+	justify-content: flex-start;
+	padding-right: 10%;
+}
+
+.ComicShowInfoText {
+	border-left: 5px solid white;
+	height: 75%;
+	width: 50%;
+	padding-left: 5%;
+}
+
+.ComicShowTitleText {
+	font-size: 2em;
+	padding-bottom: 5%;
+}
+
+.BackButton {
+	background-color: red;
+	border: 1px solid red;
+	color: white;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 600;
+	margin-top: 5%;
 }

@@ -2,6 +2,7 @@ import '../App.css';
 import React, { useState, useEffect } from 'react'
 import Header from "../components/Header";
 import { useParams } from 'react-router';
+import { Link } from 'react-router-dom'
 
 function ComicShow(props) {
 
@@ -46,18 +47,26 @@ function ComicShow(props) {
         <Header />
         { comic ?
         <div className="ComicShowContainer">
-          <div className="ComicShowTItle">
-            <h2 className="ComicShowTitleText">Comic Show Page</h2>
+          <div className="ComicShowPageHeader">
           </div>
           <div className="ComicShowData">
-            <h2>{comic.title}</h2>
+            <div className="ComicShowImage">
             <img src={`${comic.thumbnail.path}/portrait_xlarge.${comic.thumbnail.extension}`}/>
-            <h2>Creators:</h2>
-            {showCreators}
-            <h3>{comic.description}</h3>
+            </div>
+            <div className="ComicShowInfoText">
+              <h2 className="ComicShowTitleText">{comic.title}</h2>
+              <h2>Creators:</h2>
+              {showCreators}
+              <h3>{comic.description}</h3>
+            </div>
           </div>
         </div>
         : null }
+        <div className="BackButtonContainer">
+        <Link className="HomePageLinks" to="/marvel/comics">
+          <button className="BackButton">Back to Comics</button>
+        </Link>
+        </div>
     </div>
   )
 }

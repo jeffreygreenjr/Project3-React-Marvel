@@ -69,12 +69,18 @@ table {
 	font-family: 'Source Sans Pro', sans-serif;
 	font-weight: 600;
 	font-size: 2em;
+	color: white;
 }
 
 .Marvel {
 	font-family: 'Source Sans Pro', sans-serif;
 	font-weight: 900;
 	font-size: 6em;
+	color: red;
+}
+
+.Marvel:hover {
+	font-size: 8em;
 }
 
 .Footer {
@@ -148,6 +154,15 @@ table {
 	font-size: 2em;
 	color: white;
 	text-decoration: none;
+}
+
+.HomePageLinks:hover {
+	text-decoration: underline red;
+}
+
+.HomePageLinks:active {
+	color: red;
+	transform:scale(105%);
 }
 
 /* ----CharacterListPage Styling---- */

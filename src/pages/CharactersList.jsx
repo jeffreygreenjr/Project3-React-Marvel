@@ -420,29 +420,27 @@ function CharactersList() {
     //     }
     //   }
 
-    const ts = "1";
-    // console.log(ts)
+    const [characters, setCharacters] = useState([]);
+    const [offset, setOffset] = useState(0)
 
+    const ts = "1";
     const publicKey = "bae264a78d7aecbdf0c29743a7238fcf"
     const privateKey = "d7947ba99955b0776f74ec69494c5aa2c8517542"
-
     const hashKey = "4c28d14aff270e81fe72ecb1a63adeee"
-    // console.log(hashKey)
     
-    const URL = `https://gateway.marvel.com:443/v1/public/characters?ts=${ts}&apikey=${publicKey}&hash=${hashKey}`
-
-    const [characters, setCharacters] = useState([]);
+    const URL = `https://gateway.marvel.com:443/v1/public/characters?offset=${offset}&ts=${ts}&apikey=${publicKey}&hash=${hashKey}`
 
     const getCharacters = async () => {
       const res = await fetch(URL);
       const data = await res.json();
       // console.log(`Look ${JSON.stringify(data.data.results[0])}`)
       setCharacters(data.data.results)
+      setOffset(offset + 20) 
     }
 
-    // useEffect(() => {
-    //   getCharacters();
-    // }, []);
+    useEffect(() => {
+      getCharacters();
+    }, []);
 
     const loading = () => {
       return <h1>Loading the Marvel Universe...</h1>
@@ -474,7 +472,7 @@ function CharactersList() {
 
 return (
   <div className="CharactersListPage">
-    <Header />
+      <Header />
       <div className="CharactersListTitle">
         <h1 className="CharacterTitleText">Characters</h1>
       </div>
@@ -482,7 +480,10 @@ return (
         <CharacterSearchContainer />
       </div>
       <div className="CharacterListContainer">
-        {/* {showCharacters} */}
+        {showCharacters}
+      </div>
+      <div className="NextButtonContainer">
+        <button className="NextButton" onClick={getCharacters}>See More</button>
       </div>
         
   </div>

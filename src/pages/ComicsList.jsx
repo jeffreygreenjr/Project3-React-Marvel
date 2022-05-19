@@ -183,27 +183,27 @@ function ComicsList(props) {
   //   }
   // }
 
+  const [offset, setOffset] = useState(0);
+  const [comics, setComics] = useState([]);
+
   const ts = "1";
-
-    const publicKey = "bae264a78d7aecbdf0c29743a7238fcf"
-    const privateKey = "d7947ba99955b0776f74ec69494c5aa2c8517542"
-
-    const hashKey = "4c28d14aff270e81fe72ecb1a63adeee"
+  const publicKey = "bae264a78d7aecbdf0c29743a7238fcf"
+  const privateKey = "d7947ba99955b0776f74ec69494c5aa2c8517542"
+  const hashKey = "4c28d14aff270e81fe72ecb1a63adeee"
     
     const URL = `https://gateway.marvel.com:443/v1/public/comics?ts=${ts}&apikey=${publicKey}&hash=${hashKey}`
-
-    const [comics, setComics] = useState([]);
-
+ 
     const getComics = async () => {
       const res = await fetch(URL);
       const data = await res.json();
-      console.log(`Look ${JSON.stringify(data.data.results[0])}`)
+      // console.log(`Look ${JSON.stringify(data.data.results[0])}`)
       setComics(data.data.results)
+      setOffset(offset + 20)
     }
 
-    // useEffect(() => {
-    //   getComics();
-    // }, []);
+    useEffect(() => {
+      getComics();
+    }, []);
 
     const loading = () => {
       return <h1>Loading the Marvel Universe...</h1>
@@ -231,8 +231,11 @@ function ComicsList(props) {
           <ComicSearchContainer />
         </div>
         <div className="ComicsListContainer">
-          {/* {showComics} */}
-        </div>    
+          {showComics}
+        </div>
+        <div className="NextButtonContainer">
+        <button className="NextButton" onClick={getComics}>See More</button>
+      </div>    
       </div>
     )
 }

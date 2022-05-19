@@ -105,24 +105,39 @@ table {
     justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
-	margin-top: 5%;
+	margin-top: 3%;
 }
 
-/* .CharacterListContainer {
+.CharacterListContainer {
+	background: black;
     display: flex;
     justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
+	padding-bottom: 2%;
 }
 
 .CharacterList {
     display: flex;
     flex-direction: column;
     padding: 2%;
-} */
+}
 
 .CharacterName {
 	color: white;
+}
+
+.NextButtonContainer {
+	background-color: black;
+	padding-bottom: 5%;
+}
+
+.NextButton {
+	background-color: red;
+	border: 1px solid red;
+	color: white;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 600;
 }
 
 /* ----CHARACTERSHOWPAGE STYLING---- */
@@ -136,4 +151,42 @@ table {
 	height: 100vh;
 	background-color: black;
 	color: white;
+}
+
+.CharacterShowData {
+	background-color: red;
+	border-radius: 5%;
+	margin: auto 15%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+	padding: 5%;
+}
+
+.CharacterShowImage {
+	justify-content: flex-start;
+	padding-right: 10%;
+}
+
+.CharacterShowInfoText {
+	border-left: 5px solid white;
+	height: 75%;
+	width: 50%;
+	padding-left: 5%;
+	
+}
+
+.CharacterShowNameText {
+	font-size: 2em;
+	padding-bottom: 5%;
+}
+
+.BackButton {
+	background-color: red;
+	border: 1px solid red;
+	color: white;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 600;
+	margin-top: 5%;
 }
