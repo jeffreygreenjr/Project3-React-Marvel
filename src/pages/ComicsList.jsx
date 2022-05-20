@@ -17,7 +17,7 @@ function ComicsList(props) {
   const publicKey = process.env.REACT_APP_PUBLIC_KEY
   const privateKey = process.env.REACT_APP_PRIVATE_KEY
   const hashKey = process.env.REACT_APP_HASH_KEY
-  const URL = `https://gateway.marvel.com:443/v1/public/comics?ts=${ts}&apikey=${publicKey}&hash=${hashKey}`
+  const URL = `https://gateway.marvel.com:443/v1/public/comics?offset=${offset}&ts=${ts}&apikey=${publicKey}&hash=${hashKey}`
  
     const getComics = async () => {
       const res = await fetch(URL);
