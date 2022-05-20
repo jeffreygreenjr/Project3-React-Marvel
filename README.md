@@ -6,7 +6,7 @@ In the eigth week of my Software Engineering Immersive bootcamp, I developed and
 
 Data provided by Marvel. © 2014 Marvel
 
-### Wireframes
+### Screenshots
 ![Screen Shot 2022-05-19 at 10 49 44 PM](https://user-images.githubusercontent.com/102068506/169447980-fb84a6b1-3195-4e2b-b563-82024645846b.png)
 ![Screen Shot 2022-05-19 at 10 49 23 PM](https://user-images.githubusercontent.com/102068506/169448001-511cc597-f605-4c72-9d53-166034a902d1.png)
 ![Screen Shot 2022-05-19 at 10 50 15 PM](https://user-images.githubusercontent.com/102068506/169448024-f64b3a8f-53c6-4b82-a089-0df235b20e86.png)
